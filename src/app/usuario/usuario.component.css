@@ -1,5 +1,5 @@
 .enviar {
-  background-color: #4CAF50;
+  background-color: #25c2c7;
   /* Green */
   border: none;
   color: white;
@@ -17,7 +17,7 @@
 }
 
 .enviar:hover {
-  background-color: #45a049;
+  background-color: #1daa97;
 }
 
 .cancelar {
