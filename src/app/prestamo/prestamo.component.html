@@ -1,0 +1,51 @@
+<div class="contenedor">
+  <div class="formulario">
+    <h3>{{ editMode ? 'Editar' : 'Nuevo' }} Préstamo</h3>
+    <form [formGroup]="prestamoForm" (ngSubmit)="onSubmit()">
+      
+      <label for="idLibro">ID del Libro</label>
+      <input id="idLibro" type="number" formControlName="idLibro" placeholder="ID del Libro" required />
+
+      <label for="nombrePersona">Nombre de la Persona</label>
+      <input id="nombrePersona" type="text" formControlName="nombrePersona" placeholder="Nombre de la Persona" required />
+
+      <label for="fechaPrestamo">Fecha de Préstamo</label>
+      <input id="fechaPrestamo" type="date" formControlName="fechaPrestamo" required />
+
+      <label for="fechaDevolucion">Fecha de Devolución</label>
+      <input id="fechaDevolucion" type="date" formControlName="fechaDevolucion" required />
+
+      <button type="submit" [disabled]="!prestamoForm.valid">
+        {{ editMode ? 'Actualizar' : 'Registrar' }}
+      </button>
+      <button type="button" (click)="resetForm()">Cancelar</button>
+    </form>
+  </div>
+
+  <div class="tabla">
+    <h3>Listado de Préstamos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Libro</th>
+          <th>Persona</th>
+          <th>Fecha Préstamo</th>
+          <th>Fecha Devolución</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prestamo of prestamos">
+          <td>{{ prestamo.idLibro }}</td>
+          <td>{{ prestamo.nombrePersona }}</td>
+          <td>{{ prestamo.fechaPrestamo }}</td>
+          <td>{{ prestamo.fechaDevolucion }}</td>
+          <td>
+            <button (click)="onEdit(prestamo)">Editar</button>
+            <button (click)="onDelete(prestamo.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

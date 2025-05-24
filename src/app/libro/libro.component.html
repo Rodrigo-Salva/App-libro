@@ -1,0 +1,43 @@
+<div class="contenedor">
+  <div class="formulario">
+    <h3>{{ editMode ? 'Editar' : 'Agregar' }} Libro</h3>
+    <form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
+      <input formControlName="titulo" placeholder="Título" required />
+      <input formControlName="isbn" placeholder="ISBN" required />
+      <input formControlName="anio" type="number" placeholder="Año" required />
+      <input formControlName="genero" placeholder="Género" required />
+      <textarea formControlName="sinopsis" placeholder="Sinopsis"></textarea>
+      <button type="submit" [disabled]="!libroForm.valid">{{ editMode ? 'Actualizar' : 'Agregar' }}</button>
+      <button type="button" (click)="resetForm()">Cancelar</button>
+    </form>
+  </div>
+
+  <div class="tabla">
+    <h3>Lista de Libros</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>ISBN</th>
+          <th>Año</th>
+          <th>Género</th>
+          <th>Sinopsis</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let libro of libros">
+          <td>{{ libro.titulo }}</td>
+          <td>{{ libro.isbn }}</td>
+          <td>{{ libro.anio }}</td>
+          <td>{{ libro.genero }}</td>
+          <td>{{ libro.sinopsis }}</td>
+          <td>
+            <button (click)="onEdit(libro)">Editar</button>
+            <button (click)="onDelete(libro.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
