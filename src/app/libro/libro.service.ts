@@ -6,11 +6,11 @@ import { Libro } from './libro.model';
 })
 export class LibroService {
   private libros: Libro[] = [
-    { id: 1, titulo: "Cien Años de Soledad",
-      isbn: "9788437604947",
-      anio: 1967, 
-      sinopsis: "Historia de la familia Buendía", 
-      genero: "Realismo mágico" 
+    { id: 1, titulo: "Gallinazos sin plumas",
+      isbn: "88788961646146",
+      anio: 2006,
+      sinopsis: "El antiguo peru",
+      genero: "Recuerdos de la vida"
     }
   ];
   private nextId = 2;
