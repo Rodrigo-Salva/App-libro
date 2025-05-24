@@ -1,62 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-size: 14px;
 }
+
 .contenedor {
-    margin: 0 auto;
-    width: 1200px;
+  margin: 0 auto;
+  width: 1200px;
 }
+
 .fila {
-    display: flex;
+  display: flex;
 }
+
 .columna-30 {
-    width: 30%;
-    padding: 14px;
+  width: 30%;
+  padding: 14px;
 }
+
 .columna-70 {
-    width: 70%;
-    padding: 14px;
+  width: 70%;
+  padding: 14px;
 }
+
 form {
-    padding: 14px;
+  padding: 14px;
 }
+
 form input {
-    display: block;
-    width: 100%;
-    margin-bottom: 6px;
-    padding: 4px 8px;
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 4px 8px;
 }
+
 form button {
-    background-color: #198754;
-    color: #FFF;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 20px;
-    cursor: pointer;
+  background-color: #198754;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
 }
 
 .tabla {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
-.tabla th, .tabla td {
-    border: 1px solid #dee2e6;
-    border-collapse: collapse;
-    padding: 8px;
+
+.tabla th,
+.tabla td {
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+  padding: 8px;
 }
+
 .tabla button {
-    margin-right: 4px;
-    padding: 4px 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #FFF;
+  margin-right: 4px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #FFF;
 }
+
 .tabla .editar {
-    background-color: #0d6efd;
+  background-color: #0080ff;
 }
+
 .tabla .eliminar {
-    background-color: #dc3545;
+  background-color: #dc3545;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .contenedor {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .fila {
+    flex-direction: column;
+  }
+
+  .columna-30,
+  .columna-70 {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  form {
+    padding: 10px 0;
+  }
+
+  form button {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .tabla button {
+    padding: 6px 12px;
+    margin-bottom: 6px;
+    width: 48%;
+    display: inline-block;
+  }
 }

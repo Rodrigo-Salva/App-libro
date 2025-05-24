@@ -1,21 +1,54 @@
 .enviar {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 8px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 8px 4px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.enviar:hover {
+  background-color: #45a049;
 }
 
 .cancelar {
-    background-color: #dc3545;
-    color: #FFF;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 20px;
-    cursor: pointer;
-    margin-left: 5px;
+  background-color: #dc3545;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.cancelar:hover {
+  background-color: #b02a37;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+
+  .enviar,
+  .cancelar {
+    padding: 14px 0;
+    width: 100%;
+    margin: 8px 0;
+    display: block;
+    text-align: center;
+    margin-left: 0;
+    min-width: auto;
+  }
 }

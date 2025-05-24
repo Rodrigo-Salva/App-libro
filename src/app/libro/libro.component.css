@@ -56,7 +56,7 @@
   border-collapse: collapse;
   margin-top: 1rem;
   background-color: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .tabla th,
@@ -95,9 +95,44 @@
   color: white;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive para pantallas medianas */
+@media (max-width: 992px) {
   .contenedor {
     flex-direction: column;
+  }
+
+  .formulario {
+    padding: 1rem;
+  }
+
+  .tabla {
+    margin-top: 2rem;
+  }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+
+  .formulario,
+  .tabla {
+    flex: 1 1 100%;
+    padding: 1rem 0;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 1rem;
+  }
+
+  .formulario button,
+  .tabla button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .tabla th,
+  .tabla td {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 }
